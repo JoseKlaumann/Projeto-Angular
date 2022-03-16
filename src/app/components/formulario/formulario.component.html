@@ -1,0 +1,61 @@
+<fieldset>
+  <h2 class="col-lg-3 offset-lg-4 text-center">Formulário</h2>
+  <!-- Horizontal form -->
+  <form class="container">
+      <div class="form-group row mb-3">
+          <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" name="nome" placeholder="Nome">
+          </div>
+      </div>
+      <div class="form-group row mb-3">
+          <label for="email" class="col-sm-2 col-form-label">Contato</label>
+          <div class="col-sm-8">
+              <input type="text" class="form-control" name="contato" placeholder="Contato">
+          </div>
+      </div>
+      <div class="form-group row mb-3">
+          <label for="cep" class="col-sm-2 col-form-label">CEP</label>
+          <div class="col-sm-8">
+              <input name="cep" type="text" (blur)="getViaCEP($event)" class="form-control" placeholder="CEP">
+          </div>
+      </div>
+
+      <!-- Endereço - API -->
+      <div *ngIf="showForm | async">
+          <div class="form-group row mb-3">
+              <label for="rua" class="col-sm-2 col-form-label">Rua</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" name="rua" placeholder="Rua" [(ngModel)]="formContato.logradouro">
+              </div>
+          </div>
+          <div class="form-group row mb-3">
+              <label for="numero" class="col-sm-2 col-form-label">Número</label>
+              <div class="col-sm-8">
+                  <input type="number" class="form-control" name="numero" placeholder="Número" [(ngModel)]="formContato.numero">
+              </div>
+          </div>
+          <div class="form-group row mb-3">
+              <label for="bairro" class="col-sm-2 col-form-label">Bairro</label>
+              <div class="col-sm-8">
+                  <input type="text" class="form-control" name="bairro" placeholder="Bairro" [(ngModel)]="formContato.bairro">
+              </div>
+          </div>
+          <div class="form-group row mb-3">
+              <label for="cidade" class="col-sm-2 col-form-label">Cidade/UF</label>
+              <div class="col-sm-6">
+                  <input type="text" class="form-control" name="cidade" placeholder="Cidade" [(ngModel)]="formContato.localidade">
+              </div>
+              <div class="col-sm-2">
+                  <input type="text" class="form-control" name="uf" placeholder="UF" [(ngModel)]="formContato.uf">
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 offset-lg-4 text-center mb-5">
+          <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+      </div>
+  </form>
+</fieldset>

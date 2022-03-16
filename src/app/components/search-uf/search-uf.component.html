@@ -1,0 +1,41 @@
+<fieldset>
+  <h2 class="col-lg-3 offset-lg-4 text-center">Selecione sua UF</h2>
+  <form action="" class="container">
+    <div class="form-group row mb-3">
+      <label for="uf" class="col-sm-4 col-form-label">UF
+        <select (change)="loadMunicipiosByUf($event)" name="uf" id="uf" class="form-control">
+          <option value="">Selecione</option>
+          <option value="SC">SC</option>
+          <option value="PA">PA</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- <br> -->
+
+    <div class="form-group row mb-3">
+      <label for="cidade" class="col-sm-4 col-form-label">Cidades
+        <select name="cidades" id="cidades" class="form-control">
+          <option value="">Selecione...</option>
+          <option *ngFor="let cidade of cidades$ | async" value="{{cidade.id}}">{{cidade.nome}}</option>
+        </select>
+      </label>
+    </div>
+  </form>
+</fieldset>
+
+
+
+
+<!-- <fieldset>
+  <h2 class="col-lg-3 offset-lg-4 text-center">Entre com a sua UF</h2>
+  <!-- Horizontal form -->
+  <!-- <form class="container">
+      <div class="form-group row mb-3">
+          <label for="uf" class="col-sm-2 col-form-label">UF</label>
+          <div class="col-sm-2">
+              <input type="text" class="form-control" name="uf" placeholder="UF">
+          </div>
+      </div>
+  </form>
+</fieldset> -->
